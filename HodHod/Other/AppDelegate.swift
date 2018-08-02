@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let _ = Store.shared
         
+        UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 0.7228377461, blue: 0, alpha: 1)
+        
         return true
     }
 

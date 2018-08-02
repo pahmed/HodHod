@@ -9,4 +9,7 @@ target 'HodHod' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Kingfisher'
+  pod 'SwiftLocation', '3.2.3'
+  pod 'MBProgressHUD'
+  pod 'VideoSplashKit'
 end

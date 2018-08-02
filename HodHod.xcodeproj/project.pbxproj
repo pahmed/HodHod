@@ -20,6 +20,8 @@
 		0F04FFEA2112FD2900DCA9BD /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F04FFE92112FD2900DCA9BD /* Person.swift */; };
 		0F04FFEC2113109800DCA9BD /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F04FFEB2113109700DCA9BD /* Store.swift */; };
 		0FE08221211330510005A10F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE08220211330510005A10F /* Alert.swift */; };
+		0FE08223211385E40005A10F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE08222211385E40005A10F /* LoginViewController.swift */; };
+		0FE08225211386770005A10F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE08224211386770005A10F /* User.swift */; };
 		E9F1E2107B003B6455E49572 /* Pods_HodHod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E299F5D3627FC89FC96399A2 /* Pods_HodHod.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		0F04FFE92112FD2900DCA9BD /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		0F04FFEB2113109700DCA9BD /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		0FE08220211330510005A10F /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		0FE08222211385E40005A10F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0FE08224211386770005A10F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E299F5D3627FC89FC96399A2 /* Pods_HodHod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HodHod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC77BFF09F0D03603037D6F6 /* Pods-HodHod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HodHod.release.xcconfig"; path = "Pods/Target Support Files/Pods-HodHod/Pods-HodHod.release.xcconfig"; sourceTree = "<group>"; };
 		FE72F3869E18A52B90744737 /* Pods-HodHod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HodHod.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HodHod/Pods-HodHod.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				0F04FFE72112F64F00DCA9BD /* PersonDetailsViewController.swift */,
 				0F04FFE92112FD2900DCA9BD /* Person.swift */,
 				0F04FFEB2113109700DCA9BD /* Store.swift */,
+				0FE08222211385E40005A10F /* LoginViewController.swift */,
+				0FE08224211386770005A10F /* User.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -234,6 +240,10 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-HodHod/Pods-HodHod-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/VideoSplashKit/VideoSplashKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -241,6 +251,10 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VideoSplashKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -256,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FE08223211385E40005A10F /* LoginViewController.swift in Sources */,
 				0F04FFEA2112FD2900DCA9BD /* Person.swift in Sources */,
 				0F04FFE82112F64F00DCA9BD /* PersonDetailsViewController.swift in Sources */,
 				0F04FFDE2112DB2700DCA9BD /* ReportLostPersonViewController.swift in Sources */,
@@ -263,6 +278,7 @@
 				0F04FFDC2112C23500DCA9BD /* HomeViewController.swift in Sources */,
 				0F04FFE42112EB0700DCA9BD /* Constants.swift in Sources */,
 				0FE08221211330510005A10F /* Alert.swift in Sources */,
+				0FE08225211386770005A10F /* User.swift in Sources */,
 				0F04FFEC2113109800DCA9BD /* Store.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

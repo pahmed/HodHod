@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import MBProgressHUD
 
 class HomeViewController: UITableViewController, UISearchBarDelegate {
     
@@ -19,6 +20,9 @@ class HomeViewController: UITableViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.hidesBackButton = true
+        navigationController?.setNavigationBarHidden(false, animated: true)
         
         ref = Database.database().reference()
         
@@ -76,5 +80,24 @@ class HomeViewController: UITableViewController, UISearchBarDelegate {
         
         performSegue(withIdentifier: "lostPersonDetails", sender: self)
     }
-
+    
+    @IBAction func reportFatigue(_ sender: Any) {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        Store.shared.reportFatigue { [weak self] (success) in
+            guard let strongSelf = self else { return }
+            
+            DispatchQueue.main.async {
+                MBProgressHUD.hide(for: strongSelf.view, animated: true)
+                
+                if success {
+                    Alert(title: "Success!", message: "Problem reported successfully")
+                        .addCancelAction(title: "Ok")
+                        .show(in: self)
+                }
+            }
+        }
+        
+    }
+    
 }

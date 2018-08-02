@@ -8,18 +8,32 @@
 
 import Foundation
 import FirebaseDatabase
+import SwiftLocation
+import CoreLocation
 
 class Store {
     
     static let shared = Store()
     let ref: DatabaseReference
+    var currentUser: User? {
+        didSet {
+            updateUsersLocation()
+        }
+    }
     
     private(set) var personByID: [String: Person] = [:]
+    private var locationToken: LocationRequest!
+    private var currentLocation: CLLocation? {
+        didSet {
+            guard let location = currentLocation else { return }
+            store(location: location)
+        }
+    }
     
     init() {
         ref = Database.database().reference()
         
-        ref.child("reports").child("lostPersons").observe(.value) { [weak self] (snapshot) in
+        ref.child("reporters").child("lostPersons").observe(.value) { [weak self] (snapshot) in
             
             guard let info = snapshot.value as? [String: Any] else { return }
             
@@ -27,6 +41,14 @@ class Store {
             
             print("snapshot value: \(String(describing: snapshot.value))")
         }
+    }
+    
+    func store(location: CLLocation) {
+        guard let user = currentUser else { return }
+        
+        ref.child("reporters/\(user.id)/name").setValue(user.id)
+        ref.child("reporters/\(user.id)/lat").setValue(location.coordinate.latitude)
+        ref.child("reporters/\(user.id)/lon").setValue(location.coordinate.longitude)
     }
     
     func indexLostPersons(for snapshot: [String: Any]) {
@@ -46,5 +68,42 @@ class Store {
             }
             
         }
+    }
+    
+    func updateUsersLocation() {
+        Locator.requestAuthorizationIfNeeded(.always)
+        Locator.currentPosition(accuracy: .block, onSuccess: { [weak self] (location) -> (Void) in
+            self?.currentLocation = location
+        }, onFail: { error, last in
+            
+        })
+    }
+    
+    func reportFatigue(completion: @escaping (Bool) -> ()) {
+        guard let user = currentUser else {
+            completion(false)
+            return
+        }
+        
+        Locator.requestAuthorizationIfNeeded(.whenInUse)
+        Locator.currentPosition(accuracy: .block, onSuccess: { [weak self] (location) -> (Void) in
+            
+            let id = UUID().uuidString
+            
+            let info: [String: Any] = [
+                "reporterID": user.id,
+                "type": "fatigue",
+                "date": Date().timeIntervalSince1970,
+                "lat": location.coordinate.latitude,
+                "lon": location.coordinate.longitude,
+            ]
+            
+            self?.ref.child("reports/\(id)").setValue(info)
+            
+            completion(true)
+            
+            }, onFail: { error, last in
+                completion(false)
+        })
     }
 }
