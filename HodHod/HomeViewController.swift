@@ -8,15 +8,9 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
-    @IBOutlet weak var lostPersonButton: UIButton!
+class HomeViewController: UITableViewController{
     
     @IBOutlet var cardViews: [UIView]!
-    
-    @IBOutlet weak var lostPersonView: UIView!
-    @IBOutlet weak var patientCardView: UIView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

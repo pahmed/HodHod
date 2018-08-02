@@ -1,0 +1,9 @@
+// Lost person issue
+
+{
+    "id": "issue-id",
+    "reporterID": "rep-id",
+    "personPhoto": "imaeg.asdasd.",
+    "personName": "personID",
+    "notes": "some notes"
+}

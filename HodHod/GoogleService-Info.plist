@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>202093423731-67vr4dkuk2ldqbblg8kk2luofpvdf5pj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.202093423731-67vr4dkuk2ldqbblg8kk2luofpvdf5pj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDmYtdyU-ECmNruTbCK_AGyyL9GkM7r5zo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>202093423731</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ibrahim.me.HodHod</string>
+	<key>PROJECT_ID</key>
+	<string>hodhod-706ea</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hodhod-706ea.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:202093423731:ios:185a49b9e65b355a</string>
+	<key>DATABASE_URL</key>
+	<string>https://hodhod-706ea.firebaseio.com</string>
+</dict>
+</plist>
