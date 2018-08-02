@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+        let _ = Store.shared
+        
         return true
     }
 

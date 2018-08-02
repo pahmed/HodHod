@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Kingfisher
 
 class ReportLostPersonViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -31,12 +32,20 @@ class ReportLostPersonViewController: UIViewController, UIImagePickerControllerD
         }
     }
     
+    func imageData() -> String? {
+        return image
+            .map({ $0.kf.resize(to: CGSize(width: 200, height: 200), for: .aspectFit)})
+            .flatMap({ UIImageJPEGRepresentation($0, 1) })
+            .map({ $0.base64EncodedString() })
+    }
+    
     // firebase
-    var ref = Database.database().reference()
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        ref = Database.database().reference()
     }
 
     @IBAction func takePhotoAction(_ sender: Any) {
@@ -45,14 +54,32 @@ class ReportLostPersonViewController: UIViewController, UIImagePickerControllerD
     
     @IBAction func reportAction(_ sender: Any) {
         
-        let info: [String: Any] = [
-            "reporterID": "ali",
-            "personID": "1122",
-            "date": Date().timeIntervalSince1970,
-            "personName": "ibrahim",
-        ]
+        let name = nameTextField.text ?? ""
+        let id = idTextField.text ?? ""
         
-        ref.child("reports/lostPersons/case2/").setValue(info)
+        guard image != nil || name.isEmpty == false || id.isEmpty == false else {
+            Alert(title: NSLocalizedString("Name, photo, or id is required", comment: ""), message: nil)
+                .show(in: self)
+            return
+        }
+        
+        var info: [String: Any] = [:]
+        info["reporterID"] = "ali"
+        info["personID"] = id
+        info["personName"] = name
+        info["date"] = Date().timeIntervalSince1970
+        info["imageData"] = imageData()
+        
+        let caseID = UUID().uuidString
+        
+        ref.child("reports/lostPersons/\(caseID)/").setValue(info)
+        
+        Alert(
+            title: NSLocalizedString("Completed!", comment: ""),
+            message: NSLocalizedString("Report has been submitted successfully", comment: "")
+        ).add(action: UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: { [weak self] _ in
+            self?.navigationController?.popViewController(animated: true)
+        })).show(in: self)
     }
     
     // MARK: image picker
