@@ -94,6 +94,10 @@ class HomeViewController: UITableViewController, UISearchBarDelegate {
                     Alert(title: "Success!", message: "Problem reported successfully")
                         .addCancelAction(title: "Ok")
                         .show(in: self)
+                } else {
+                    Alert(title: "Oops!", message: "Something went wrong")
+                        .addCancelAction(title: "Ok")
+                        .show(in: self)
                 }
             }
         }

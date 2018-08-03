@@ -101,13 +101,13 @@
                                                                     </connections>
                                                                 </button>
                                                                 <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="0GS-T4-BKr">
-                                                                    <rect key="frame" x="25" y="7.5" width="103" height="97.5"/>
+                                                                    <rect key="frame" x="13" y="7.5" width="127.5" height="97.5"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blood" translatesAutoresizingMaskIntoConstraints="NO" id="MY8-NO-FA7">
-                                                                            <rect key="frame" x="31.5" y="0.0" width="40" height="61"/>
+                                                                            <rect key="frame" x="44" y="0.0" width="40" height="61"/>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إبلاغ عن مريض" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0un-wB-3Fl">
-                                                                            <rect key="frame" x="0.0" y="77" width="103" height="20.5"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إبلاغ عن حالة إعياء" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0un-wB-3Fl">
+                                                                            <rect key="frame" x="0.0" y="77" width="127.5" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -242,13 +242,13 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="152.5" height="132"/>
                                                                 </button>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XdU-dj-mQ9">
-                                                                    <rect key="frame" x="8.5" y="26.5" width="136" height="79.5"/>
+                                                                    <rect key="frame" x="14.5" y="26.5" width="124" height="79.5"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus" translatesAutoresizingMaskIntoConstraints="NO" id="lxT-1a-erl">
-                                                                            <rect key="frame" x="29" y="0.0" width="78" height="43"/>
+                                                                            <rect key="frame" x="23" y="0.0" width="78" height="43"/>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إبلاغ عن وسيلة تنقل" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDc-dp-7Te">
-                                                                            <rect key="frame" x="0.0" y="59" width="136" height="20.5"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إبلاغ تكدس مروري" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDc-dp-7Te">
+                                                                            <rect key="frame" x="0.0" y="59" width="124" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>

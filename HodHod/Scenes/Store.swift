@@ -85,8 +85,8 @@ class Store {
             return
         }
         
-        Locator.requestAuthorizationIfNeeded(.whenInUse)
-        Locator.currentPosition(accuracy: .block, onSuccess: { [weak self] (location) -> (Void) in
+        Locator.requestAuthorizationIfNeeded(.always)
+        Locator.currentPosition(accuracy: .neighborhood, onSuccess: { [weak self] (location) -> (Void) in
             
             let id = UUID().uuidString
             

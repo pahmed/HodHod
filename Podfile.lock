@@ -33,7 +33,6 @@ PODS:
   - SwiftLocation (3.2.3):
     - SwiftyJSON (~> 4.0.0-alpha.1)
   - SwiftyJSON (4.0.0)
-  - VideoSplashKit (1.2.1)
 
 DEPENDENCIES:
   - Firebase/Core
@@ -41,7 +40,6 @@ DEPENDENCIES:
   - Kingfisher
   - MBProgressHUD
   - SwiftLocation (= 3.2.3)
-  - VideoSplashKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -57,7 +55,6 @@ SPEC REPOS:
     - nanopb
     - SwiftLocation
     - SwiftyJSON
-    - VideoSplashKit
 
 SPEC CHECKSUMS:
   Firebase: 355bd535bfdacaa82a7fe8d9784115edefd6fc03
@@ -72,8 +69,7 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
-  VideoSplashKit: 9d5670948cfb0be15262d973cedbfd3faecddcad
 
-PODFILE CHECKSUM: 7e4a29ee93473b872a8a6dacbf43ba7c27f43c49
+PODFILE CHECKSUM: 071ef96e30dc5b2fd88b4d89dcd6de51a35dc5f2
 
 COCOAPODS: 1.5.3

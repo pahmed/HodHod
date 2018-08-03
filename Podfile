@@ -11,5 +11,4 @@ target 'HodHod' do
   pod 'Kingfisher'
   pod 'SwiftLocation', '3.2.3'
   pod 'MBProgressHUD'
-  pod 'VideoSplashKit'
 end
