@@ -83,9 +83,21 @@ class HomeViewController: UITableViewController, UISearchBarDelegate {
     }
     
     @IBAction func reportFatigue(_ sender: Any) {
+        reportIssueWithType("fatigue")
+    }
+    
+    @IBAction func reportDumps(_ sender: Any) {
+        reportIssueWithType("rubbish")
+    }
+    
+    @IBAction func reportCrowd(_ sender: Any) {
+        reportIssueWithType("crowding")
+    }
+    
+    func reportIssueWithType(_ type: String) {
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
-        Store.shared.reportFatigue { [weak self] (success) in
+        Store.shared.reportIssueWithType(type) { [weak self] (success) in
             guard let strongSelf = self else { return }
             
             DispatchQueue.main.async {
@@ -93,7 +105,7 @@ class HomeViewController: UITableViewController, UISearchBarDelegate {
                 
                 if success {
                     let statusAlert = StatusAlert()
-//                    statusAlert.image = UIImage(named: "Some image name")
+                    //                    statusAlert.image = UIImage(named: "Some image name")
                     statusAlert.title = "Success!"
                     statusAlert.message = "Problem reported successfully"
                     
@@ -106,7 +118,6 @@ class HomeViewController: UITableViewController, UISearchBarDelegate {
                 }
             }
         }
-        
     }
     
 }

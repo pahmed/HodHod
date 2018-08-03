@@ -86,7 +86,32 @@ class Store {
 //        })
     }
     
-    func reportFatigue(completion: @escaping (Bool) -> ()) {
+//    func reportFatigue(completion: @escaping (Bool) -> ()) {
+//        guard let user = currentUser else {
+//            completion(false)
+//            return
+//        }
+//        
+//        INTULocationManager.sharedInstance().requestLocation(withDesiredAccuracy: .neighborhood, timeout: 30) { [weak self] (location, _, _) in
+//            guard let location = location else { return }
+//            
+//            let id = UUID().uuidString
+//            
+//            let info: [String: Any] = [
+//                "reporterID": user.id,
+//                "type": "fatigue",
+//                "date": Date().timeIntervalSince1970,
+//                "lat": location.coordinate.latitude,
+//                "lon": location.coordinate.longitude,
+//                ]
+//            
+//            self?.ref.child("reports/\(id)").setValue(info)
+//            
+//            completion(true)
+//        }
+//    }
+    
+    func reportIssueWithType(_ type: String, completion: @escaping (Bool) -> ()) {
         guard let user = currentUser else {
             completion(false)
             return
@@ -99,7 +124,7 @@ class Store {
             
             let info: [String: Any] = [
                 "reporterID": user.id,
-                "type": "fatigue",
+                "type": type,
                 "date": Date().timeIntervalSince1970,
                 "lat": location.coordinate.latitude,
                 "lon": location.coordinate.longitude,
@@ -109,26 +134,5 @@ class Store {
             
             completion(true)
         }
-        
-//        Locator.requestAuthorizationIfNeeded(.always)
-//        Locator.currentPosition(accuracy: .neighborhood, onSuccess: { [weak self] (location) -> (Void) in
-//            
-//            let id = UUID().uuidString
-//            
-//            let info: [String: Any] = [
-//                "reporterID": user.id,
-//                "type": "fatigue",
-//                "date": Date().timeIntervalSince1970,
-//                "lat": location.coordinate.latitude,
-//                "lon": location.coordinate.longitude,
-//            ]
-//            
-//            self?.ref.child("reports/\(id)").setValue(info)
-//            
-//            completion(true)
-//            
-//            }, onFail: { error, last in
-//                completion(false)
-//        })
     }
 }
