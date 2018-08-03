@@ -19,6 +19,7 @@
 		0F04FFE82112F64F00DCA9BD /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F04FFE72112F64F00DCA9BD /* PersonDetailsViewController.swift */; };
 		0F04FFEA2112FD2900DCA9BD /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F04FFE92112FD2900DCA9BD /* Person.swift */; };
 		0F04FFEC2113109800DCA9BD /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F04FFEB2113109700DCA9BD /* Store.swift */; };
+		0F4ED293211411340075FFA2 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4ED292211411340075FFA2 /* NotificationsTableViewController.swift */; };
 		0FE08221211330510005A10F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE08220211330510005A10F /* Alert.swift */; };
 		0FE08223211385E40005A10F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE08222211385E40005A10F /* LoginViewController.swift */; };
 		0FE08225211386770005A10F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE08224211386770005A10F /* User.swift */; };
@@ -40,6 +41,7 @@
 		0F04FFE72112F64F00DCA9BD /* PersonDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewController.swift; sourceTree = "<group>"; };
 		0F04FFE92112FD2900DCA9BD /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		0F04FFEB2113109700DCA9BD /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		0F4ED292211411340075FFA2 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
 		0FE08220211330510005A10F /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		0FE08222211385E40005A10F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0FE08224211386770005A10F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				0F04FFEB2113109700DCA9BD /* Store.swift */,
 				0FE08222211385E40005A10F /* LoginViewController.swift */,
 				0FE08224211386770005A10F /* User.swift */,
+				0F4ED292211411340075FFA2 /* NotificationsTableViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F4ED293211411340075FFA2 /* NotificationsTableViewController.swift in Sources */,
 				0FE08223211385E40005A10F /* LoginViewController.swift in Sources */,
 				0F04FFEA2112FD2900DCA9BD /* Person.swift in Sources */,
 				0F04FFE82112F64F00DCA9BD /* PersonDetailsViewController.swift in Sources */,
