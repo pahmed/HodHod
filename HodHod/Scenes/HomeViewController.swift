@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import MBProgressHUD
+import StatusAlert
 
 class HomeViewController: UITableViewController, UISearchBarDelegate {
     
@@ -91,9 +92,13 @@ class HomeViewController: UITableViewController, UISearchBarDelegate {
                 MBProgressHUD.hide(for: strongSelf.view, animated: true)
                 
                 if success {
-                    Alert(title: "Success!", message: "Problem reported successfully")
-                        .addCancelAction(title: "Ok")
-                        .show(in: self)
+                    let statusAlert = StatusAlert()
+//                    statusAlert.image = UIImage(named: "Some image name")
+                    statusAlert.title = "Success!"
+                    statusAlert.message = "Problem reported successfully"
+                    
+                    // Presenting created instance
+                    statusAlert.showInKeyWindow()
                 } else {
                     Alert(title: "Oops!", message: "Something went wrong")
                         .addCancelAction(title: "Ok")

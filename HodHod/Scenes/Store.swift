@@ -10,6 +10,7 @@ import Foundation
 import FirebaseDatabase
 import SwiftLocation
 import CoreLocation
+import INTULocationManager
 
 class Store {
     
@@ -71,12 +72,18 @@ class Store {
     }
     
     func updateUsersLocation() {
-        Locator.requestAuthorizationIfNeeded(.always)
-        Locator.currentPosition(accuracy: .block, onSuccess: { [weak self] (location) -> (Void) in
-            self?.currentLocation = location
-        }, onFail: { error, last in
+        INTULocationManager.sharedInstance().requestLocation(withDesiredAccuracy: .neighborhood, timeout: 30) { [weak self] (location, _, _) in
+            guard let location = location else { return }
             
-        })
+            self?.currentLocation = location
+        }
+        
+//        Locator.requestAuthorizationIfNeeded(.always)
+//        Locator.currentPosition(accuracy: .block, onSuccess: { [weak self] (location) -> (Void) in
+//            self?.currentLocation = location
+//        }, onFail: { error, last in
+//
+//        })
     }
     
     func reportFatigue(completion: @escaping (Bool) -> ()) {
@@ -85,8 +92,8 @@ class Store {
             return
         }
         
-        Locator.requestAuthorizationIfNeeded(.always)
-        Locator.currentPosition(accuracy: .neighborhood, onSuccess: { [weak self] (location) -> (Void) in
+        INTULocationManager.sharedInstance().requestLocation(withDesiredAccuracy: .neighborhood, timeout: 30) { [weak self] (location, _, _) in
+            guard let location = location else { return }
             
             let id = UUID().uuidString
             
@@ -96,14 +103,32 @@ class Store {
                 "date": Date().timeIntervalSince1970,
                 "lat": location.coordinate.latitude,
                 "lon": location.coordinate.longitude,
-            ]
+                ]
             
             self?.ref.child("reports/\(id)").setValue(info)
             
             completion(true)
-            
-            }, onFail: { error, last in
-                completion(false)
-        })
+        }
+        
+//        Locator.requestAuthorizationIfNeeded(.always)
+//        Locator.currentPosition(accuracy: .neighborhood, onSuccess: { [weak self] (location) -> (Void) in
+//            
+//            let id = UUID().uuidString
+//            
+//            let info: [String: Any] = [
+//                "reporterID": user.id,
+//                "type": "fatigue",
+//                "date": Date().timeIntervalSince1970,
+//                "lat": location.coordinate.latitude,
+//                "lon": location.coordinate.longitude,
+//            ]
+//            
+//            self?.ref.child("reports/\(id)").setValue(info)
+//            
+//            completion(true)
+//            
+//            }, onFail: { error, last in
+//                completion(false)
+//        })
     }
 }
